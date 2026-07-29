@@ -1,0 +1,27 @@
+# avm
+
+A shareable dev-environment definition. 
+The `Smolfile` is generated from a template.
+Installs pi.dev and claude code.
+
+## Usage
+
+```bash
+# 1. Create your local config from the example
+cp smol.env.example smol.env
+
+# 2. Edit smol.env to match your machine
+$EDITOR smol.env
+
+# 3. Render the Smolfile
+./render-smolfile.sh
+```
+
+## Parameters
+
+| Variable        | Description                                          |
+| --------------- | ---------------------------------------------------- |
+| `SMOL_IMAGE`    | Base container image.                                |
+| `PROJECTS_DIR`  | Host projects dir, mounted at `/projects`.           |
+| `PI_AGENT_DIR`  | Host pi agent config, mounted at `/root/.pi/agent/`. |
+| `AGENTS_DIR`    | Host agents/skills dir, mounted at `/root/.agents/`. |

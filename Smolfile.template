@@ -1,0 +1,27 @@
+image = "${SMOL_IMAGE}"
+net = true
+
+[dev]
+env = ["COLORTERM=truecolor"]
+init = [
+  "apk update && apk add --no-cache bash git build-base cmake python3 curl",
+  '''bash -lc '
+    echo "export PATH=/root/.local/bin:$PATH" >> /etc/profile
+    export PATH=/root/.local/bin:$PATH
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+
+    apk add --no-cache nodejs npm
+
+    npm install -g --ignore-scripts @earendil-works/pi-coding-agent
+    curl -fsSL https://claude.ai/install.sh | bash
+    export PATH="$HOME/.local/bin:$PATH"
+
+    touch /root/.profile
+    echo "COLORTERM=truecolor" > /root/.profile
+  ''''
+]
+volumes = [
+    '${PROJECTS_DIR}:/projects',
+    '${PI_AGENT_DIR}:/root/.pi/agent/',
+    '${AGENTS_DIR}:/root/.agents/',
+]

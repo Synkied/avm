@@ -1,0 +1,5 @@
+# Local, machine-specific config (contains absolute host paths)
+smol.env
+
+# Rendered output (generated from Smolfile.template + smol.env)
+Smolfile
