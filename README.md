@@ -2,7 +2,7 @@
 
 A shareable dev-environment definition. 
 The `Smolfile` is generated from a template.
-Installs pi.dev and claude code.
+Installs [pi.dev](https://pi.dev/) and [Claude Code](https://code.claude.com/docs/en/overview).
 
 ## Usage
 
