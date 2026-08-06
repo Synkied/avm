@@ -16,6 +16,10 @@ init = [
     curl -fsSL https://claude.ai/install.sh | bash
     export PATH="$HOME/.local/bin:$PATH"
 
+    curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
+    rtk init -g --auto-patch
+    rtk telemetry disable
+
     touch /root/.profile
     echo "COLORTERM=truecolor" > /root/.profile
   ''''
