@@ -20,6 +20,9 @@ init = [
     rtk init -g --auto-patch
     rtk telemetry disable
 
+    apk add grep
+    apk add findutils
+
     touch /root/.profile
     echo "COLORTERM=truecolor" > /root/.profile
   ''''
